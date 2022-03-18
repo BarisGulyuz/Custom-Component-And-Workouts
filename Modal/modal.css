@@ -15,7 +15,7 @@ body{
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     padding: 1rem 1.5rem;
     border-radius: 1rem;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60ch;
@@ -54,23 +54,20 @@ body{
     margin-top: 1rem;
     border-radius: 10px;
 }
-.bg-modal-content .bg-modal-footer button:nth-child(1){
-    background: #000;
+
+.bg-modal-content .bg-modal-footer button{
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+.bg-modal-content .bg-modal-footer button:nth-child(1){
+    background: #000;
 }
 .bg-modal-content .bg-modal-footer button:nth-child(2){
     background: #ff0000;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
 }
-
 /* End of modal.css */
 
 input[type="text"], input[type="email"]{
@@ -78,7 +75,7 @@ input[type="text"], input[type="email"]{
     border-bottom: 1px solid #151D3B;
     padding: .5rem 0;
     margin-bottom: .5rem;
-    font-size: 1rem;
+    font-size: .95rem;
     width: 100%;
 }
 
