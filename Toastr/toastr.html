@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./toastr.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Toastr</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .blog-title {
+            background-color: #7A0BC0;
+            color: white;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <button class="toast-btn" onclick="showToastr('success')" style="padding: 20px; margin: 30px;">
+        Show Success Toastr
+    </button>
+    <button class="toast-btn" onclick="showToastr('error')" style="padding: 20px; margin: 30px;">
+        Show Error Toastr
+    </button>
+    <button class="toast-btn" onclick="showToastr('warning')" style="padding: 20px; margin: 30px;">
+        Show Warning Toastr
+    </button>
+    <button class="toast-btn" onclick="showToastr('info')" style="padding: 20px; margin: 30px;">
+        Show Info Toastr
+    </button>
+    
+    <div class="toastr-container">
+
+    </div>
+
+    <div class="blog">
+        <h3>BLOG</h3>
+        <hr>
+    </div>
+
+    <!-- <div class="bg-toastr">
+        <i class="fa-window-close"></i>
+        <i class="fas fa-check"></i>
+        <div>
+            <span>Success</span>
+            <span>Your changes saved succesfully. Your changes saved succesfully.</span>
+        </div>
+    </div> -->
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./toastr.js"></script>
+    <script>
+        $.ajax({
+            type: 'GET',
+            url: 'https://jsonplaceholder.typicode.com/todos/1',
+            success: (data) => {
+                const span = `<span class="blog-title">${data.title.toUpperCase()}</span>`
+                $('.blog').append(span)
+                const message = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum amet accusantium eveniet nihil exercitationem qui vero eum laborum quo aperiam'
+                showToastr('success', message, 3500)
+            },
+            error: (err) => {
+                showToastr('error', 'Error Listed', 10000)
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>
