@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Search Functionality</title>
+</head>
+
+<body>
+    <br>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <label>Search By Name</label>
+                <input type="search" class="form-control d-flex w-50  mb-3" id="search">
+            </div>
+            <div class="col-6">
+                <label>Search By Email</label>
+                <input type="search" class="form-control d-flex w-50 mb-3" id="mail">
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="user-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="name">Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <tfoot>
+                <label>Sonuç Sayısı: <span id="count"></span></label>
+            </tfoot>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

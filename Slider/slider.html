@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slider.css">
+    <title>Slider</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+
+    <div class="blog-container">
+        <div class="blog">
+            <h5>TITLE</h5>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam praesentium distinctio assumenda quidem
+                eos quibusdam vero nam molestias est optio.</p>
+        </div>
+        <div class="bg-slider-container">
+            <div class="bg-slider">
+                <ul>
+                    <li class="slider-item">
+                        <img src="https://picsum.photos/id/267/1000/400" alt="">
+                    </li>
+                    <li class="slider-item">
+                        <img src="https://picsum.photos/id/236/1000/400" alt="">
+                    </li>
+                    <li class="slider-item">
+                        <img src="https://picsum.photos/id/241/1000/400" alt="">
+                    </li>
+                    <li class="slider-item">
+                        <img src="https://picsum.photos/id/4/1000/400" alt="">
+                    </li>
+                    <li class="slider-item">
+                        <img src="https://picsum.photos/id/237/1000/400" alt="">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="slider.js"></script>
+    <script>
+       $(document).ready(() => {
+        customSlider({
+            selector: '.bg-slider',
+            isPaging: true,
+            autoPlay: true,
+            autoPlaySpeed: 2500,
+            isArrows: false,
+        })
+       })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+.container{
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.browser{
+    width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 400ms all;
+}
+
+.browser:hover{
+    transform: scale(1.1);
+}
+
+
+.browser .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+    background-color: #eee;
+    padding: 0 17px;
+    border-bottom: 1px solid #ddd;
+}
+
+.browser .header span{
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: orange;
+    position: relative;
+    margin: 0 3px;
+}
+
+.browser .header span::before{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: red;
+    position: absolute;
+    left: -12px;
+}
+
+.browser .header span::after{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: green;
+    position: absolute;
+    right: -12px;
+}
+
+.browser .content{
+    height: 500px;
+    background-image: url(website.png);
+    background-size: cover;
+    transition: 8s  ease-in;
+}
+
+.browser:hover .content{
+    background-position: bottom;
+}
