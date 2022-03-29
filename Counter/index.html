@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body,
+        html {
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+  
+
+    <span class="counter" data-counter="2500"></span>
+    <br>
+    <span class="counter" data-counter="3500"></span>
+    <br>
+    <span class="custom-counter"></span>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $('.counter').each(function () {
+            let counter = $(this),
+                countTo = counter.attr('data-counter');
+            $({ countNum: 0 }).animate({
+                countNum: countTo
+            },
+                {
+                    duration: 3000,
+                    easing: 'linear',
+                    step: function () {
+                        counter.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        counter.text(this.countNum);
+                    }
+                });
+        });
+
+        const customCounter = (start, end, duration) =>{
+            duration = duration / end;
+            for (let i = start; i <= end; i++) {
+                setTimeout(() => {
+                    $('.custom-counter').text(i);
+                }, duration * i);
+            }
+        }
+        customCounter(0, 5000, 3000)
+
+        
+
+        
+    </script>
+
+</body>
+
+</html>
