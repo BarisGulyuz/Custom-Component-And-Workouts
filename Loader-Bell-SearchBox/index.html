@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Loader</title>
+</head>
+
+<body>
+
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    </div>
+
+    <div class="bell">
+        <img src="https://img.icons8.com/color/48/000000/bell.png" alt="">
+        <span class="notification-count" data-notification-count="3"> </span>
+    </div>
+
+
+    <div class="search-container">
+        <input type="text" placeholder="Search">
+        <button type="submit">
+            <svg id="search-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            
+            <svg style="display: none;" id="search-close-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+    </div>
+
+
+    <div class="bg-loader">
+        <div class="loader-inner">
+        </div>
+    </div>
+
+
+    <!--Script Section-->
+
+    <script>
+        //#region hamburger menu
+        const hamburger = document.querySelector('.hamburger-menu');
+        hamburger.addEventListener('click', () => {
+            document.querySelector('.hamburger-menu').classList.toggle('active');
+        });
+        //#endregion
+
+        //#region bell notification
+        const bell = document.querySelector('.bell');
+        const notificationCount = document.querySelector('.notification-count');
+        notificationCount.innerHTML = notificationCount.getAttribute('data-notification-count');
+        bell.classList.add("notification-active");
+        notificationCount.classList.add("notification-active");
+        removeNotificationClasses()
+
+        function removeNotificationClasses() {
+            setTimeout(() => {
+                bell.classList.remove("notification-active");
+            }, 3000);
+            setTimeout(() => {
+                notificationCount.classList.remove("notification-active");
+            }, 6000);
+        }
+        //#endregion
+
+        //#region search
+        const searchSvg = document.querySelector('#search-svg');
+        const closeSvg = document.querySelector('#search-close-svg');
+        const searctButton = document.querySelector('.search-container button');
+        const searchInput = document.querySelector('.search-container input');
+        const searchContainer = document.querySelector('.search-container');
+        searctButton.addEventListener('click', () => {
+            if(searchContainer.classList.contains('active')){
+                searchSvg.style.display = 'block';
+                closeSvg.style.display = 'none';
+            }
+            else{
+                searchSvg.style.display = 'none';
+                closeSvg.style.display = 'block';
+            }
+            if(searchInput.value.length > 0) {
+                alert('Searching for ' + searchInput.value);
+                return
+            }
+            searchContainer.classList.toggle('active');
+        });
+        function toggleSearchButtonIcon(){
+            if(searchInput.value.length > 0) {
+                searchSvg.style.display = 'block';
+                closeSvg.style.display = 'none';
+            } else {
+                searchSvg.style.display = 'none';
+                closeSvg.style.display = 'block';
+            }
+        }
+        searchInput.addEventListener('keyup', () => {
+            toggleSearchButtonIcon();
+        });
+        //#endregion
+
+    </script>
+
+</body>
+
+</html>

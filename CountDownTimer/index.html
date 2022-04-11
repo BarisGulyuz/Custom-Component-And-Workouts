@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown Timer</title>
+</head>
+<style>
+    body {
+        background-color: #f5f5f5;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .timer {
+        font-size: 5rem;
+        font-weight: bold;
+        background-color: #fff;
+        color: black;
+        border-radius: 5px;
+        padding: 10px 30px;
+        text-shadow: 0 0 5px #000;
+    }
+</style>
+
+<body>
+
+    <div class="timer" data-hours="00" data-minutes="00" data-seconds="05">
+
+    </div>
+
+    <script>
+        const timer = document.querySelector('.timer');
+        const updateTime = () => {
+            let hours = parseInt(timer.dataset.hours);
+            let minutesLeft = parseInt(timer.dataset.minutes);
+            let secondsLeft = parseInt(timer.dataset.seconds) - 1;
+            if (secondsLeft < 0) {
+                secondsLeft = 59;
+                minutesLeft--;
+            }
+            if(secondsLeft < 10) {
+                secondsLeft = '0' + secondsLeft;
+            }
+            if (minutesLeft < 0) {
+                minutesLeft = 59;
+                hours--;
+            }
+            if (minutesLeft ==  0 && secondsLeft == 0) {
+                clearInterval(countdown);
+                timer.innerHTML = '<h1>Time is up!</h1>';
+                return;
+            }
+            timer.dataset.minutes = minutesLeft;
+            timer.dataset.seconds = secondsLeft;
+            timer.dataset.hours = hours;
+            timer.innerHTML =  `${hours == 0 ? '' : hours+':'}${minutesLeft}:${secondsLeft}`;
+
+        }
+        let countdown = setInterval(updateTime, 1000);
+
+
+
+    </script>
+</body>
+
+</html>
