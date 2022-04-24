@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-item img">
+
+            </div>
+            <div class="card-item content">
+                <h5>Content Section</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod minus quis, deleniti neque deserunt
+                    veritatis doloribus ut rem sunt odit excepturi tempora corporis perspiciatis impedit aliquid est,
+                    aut
+                    necessitatibus ratione quisquam repellendus ad voluptatem natus. Fugiat unde at sit commodi rerum!
+                    Voluptatibus vel aliquam voluptas ea, blanditiis saepe perferendis deleniti?</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-item img">
+
+            </div>
+            <div class="card-item content">
+                <h5>Content Section</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod minus quis, deleniti neque deserunt
+                    veritatis doloribus ut rem sunt odit excepturi tempora corporis perspiciatis impedit aliquid est,
+                    aut
+                    necessitatibus ratione quisquam repellendus ad voluptatem natus. Fugiat unde at sit commodi rerum!
+                    Voluptatibus vel aliquam voluptas ea, blanditiis saepe perferendis deleniti?</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <div style="background-image: url(christopher-campbell-rDEOVtE7vOs-unsplash.jpg);" class="card-item img">
+
+            </div>
+            <div class="card-item content">
+                <h5>Content Section</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod minus quis, deleniti neque deserunt
+                    veritatis doloribus ut rem sunt odit excepturi tempora corporis perspiciatis impedit aliquid est,
+                    aut
+                    necessitatibus ratione quisquam repellendus ad voluptatem natus. Fugiat unde at sit commodi rerum!
+                    Voluptatibus vel aliquam voluptas ea, blanditiis saepe perferendis deleniti?</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-item img">
+
+            </div>
+            <div class="card-item content">
+                <h5>Content Section</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod minus quis, deleniti neque deserunt
+                    veritatis doloribus ut rem sunt odit excepturi tempora corporis perspiciatis impedit aliquid est,
+                    aut
+                    necessitatibus ratione quisquam repellendus ad voluptatem natus. Fugiat unde at sit commodi rerum!
+                    Voluptatibus vel aliquam voluptas ea, blanditiis saepe perferendis deleniti?</p>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="profile">
+       <ul class="">
+           <li title="Add Friend"> <i class="fas fa-add"></i> </li>
+           <li title="Comments">  <i class="fas fa-comments"></i> </li>
+           <li title="Send Message">  <i class="fas fa-message"></i> </li>
+           <li title="Profile">  <i class="fas fa-user"></i> </li>
+       </ul>
+    </div>
+
+
+<script>
+    const profile = document.querySelector('.profile');
+    const options = document.querySelector('.profile>ul');
+    profile.addEventListener('mouseover', () => {
+        options.classList.add('active');
+    });
+    profile.addEventListener('mouseout', () => {
+            options.classList.remove('active');
+    });
+</script>
+</body>
+
+</html>
