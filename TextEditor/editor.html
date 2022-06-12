@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="editor.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Custom Text Editor</title>
+</head>
+
+<body>
+
+    <div class="edıtor-container">
+        <div class="options">
+            <select id="font-family">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Impact">Impact</option>
+                <option value="Lucida Console">Lucida Console</option>
+                <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+            </select>
+            <select id="font-size">
+                <option value="6">H1</option>
+                <option value="5">H2</option>
+                <option value="4">H3</option>
+                <option value="3">H4</option>
+                <option value="2">H5</option>
+                <option selected value="1">H6</option>
+            </select>
+            <button type="button" data-command="bold" class="option-btn"> <i class="fas fa-bold"></i> </button>
+            <button type="button" data-command="italic" class="option-btn"> <i class="fas fa-italic"></i> </button>
+            <button type="button" data-command="underline" class="option-btn"> <i class="fas fa-underline"></i> </button>
+            <input type="color" data-command="foreColor" class="option-color" id="option-color">
+            <input type="file" data-command="insertImage" class="option-image" id="option-image">
+
+
+            <button type="button" data-command="fullScreen" class="option-btn" id="full-screen"> <i class="fa fa-expand"></i></button>
+            
+            
+        </div>
+
+        <div id="custom-text-edıtor" class="custom-text-edıtor" contenteditable="true">
+
+        </div>
+    </div>
+
+<script src="editor.js"></script>
+</body>
+
+</html>
